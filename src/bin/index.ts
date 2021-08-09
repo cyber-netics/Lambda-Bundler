@@ -1,4 +1,2 @@
-import { Client } from '../lib';
-
-const data = new Client();
-console.log('data', data);
+import { run } from '../lib';
+run();

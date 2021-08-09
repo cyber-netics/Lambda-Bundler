@@ -4,6 +4,7 @@
       "target": "ES2019",
       "noImplicitAny": true,
       "preserveConstEnums": true,
+      "experimentalDecorators": true,
       "outDir": "./dist",
       "baseUrl": "./",
       "paths": {

@@ -3,6 +3,7 @@
       "start": "ts-node ./src/bin/index.ts --target ./dist --outFile ./bin"
    },
    "dependencies": {
+      "commander": "^8.1.0",
       "ts-node": "^10.2.0"
    },
    "devDependencies": {
