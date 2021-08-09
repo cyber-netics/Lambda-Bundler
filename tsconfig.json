@@ -1,0 +1,15 @@
+{
+   "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES2019",
+      "noImplicitAny": true,
+      "preserveConstEnums": true,
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "paths": {
+         "@types": ["src/types"]
+      }
+   },
+   "include": ["./src", "types"],
+   "exclude": ["dist", "./node_modules", "**/*.spec.ts"]
+}
