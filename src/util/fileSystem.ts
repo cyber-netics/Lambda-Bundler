@@ -22,6 +22,10 @@ export class FileSystem {
       this._configOpts = opts;
    }
 
+   private get filePath(): string {
+      return path.join(__dirname, this.fileName);
+   }
+
    constructor() {
       this.initialize();
    }
@@ -44,11 +48,15 @@ export class FileSystem {
    }
 
    private exists(): boolean {
-      return fs.existsSync(path.resolve(this.fileName));
+      try {
+         return fs.existsSync(this.filePath);
+      } catch (err) {
+         return false;
+      }
    }
 
    private readFile() {
-      const fileContetn = fs.readFileSync(path.resolve(this.fileName), {
+      const fileContetn = fs.readFileSync(this.filePath, {
          flag: 'r',
          encoding: 'utf8',
       });
