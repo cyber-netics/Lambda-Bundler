@@ -1,5 +1,7 @@
 {
    "scripts": {
+      "ts-node": "ts-node",
+      "build": "tsc",
       "start": "ts-node ./src/bin/index.ts --target ./dist --outFile ./bin"
    },
    "dependencies": {

@@ -1,2 +1,4 @@
-import { run } from '../lib';
-run();
+import { Bundler } from '../lib';
+
+const data = new Bundler();
+console.log('---', data);
