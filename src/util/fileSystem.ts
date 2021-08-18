@@ -23,7 +23,7 @@ export class FileSystem {
    }
 
    private get filePath(): string {
-      return path.join(__dirname, this.fileName);
+      return path.resolve(this.fileName);
    }
 
    constructor() {
@@ -49,7 +49,7 @@ export class FileSystem {
 
    private exists(): boolean {
       try {
-         return fs.existsSync(this.filePath);
+         return fs.existsSync(path.resolve(this.fileName));
       } catch (err) {
          return false;
       }

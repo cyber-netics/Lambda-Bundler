@@ -19,11 +19,6 @@ class Client {
       this._setConfig = this._createConfig();
    }
 
-   protected get files() {
-      const filePath = this.config.target;
-      return fs.readdirSync(path.resolve(filePath));
-   }
-
    private _createConfig(): OptionValues {
       const cli = new CLI();
       if (cli.active) return cli.options;
@@ -39,6 +34,11 @@ export class Bundler extends Client {
    constructor() {
       super();
       this._bundler();
+   }
+
+   private get files() {
+      const filePath = this.config.target;
+      return fs.readdirSync(path.resolve(filePath));
    }
 
    private _bundler() {
