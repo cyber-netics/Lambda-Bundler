@@ -1,5 +1,4 @@
 {
-   "bin": "dist/bin/index.js",
    "main":"dist/bin/index.js",
    "scripts": {
       "build": "tsc",
