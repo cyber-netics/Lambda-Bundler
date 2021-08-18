@@ -21,9 +21,9 @@
       "outDir": "./dist",
       "baseUrl": "./",
       "paths": {
-         "@types": ["src/types"]
+         "@types": ["lib/types"]
       }
    },
-   "include": ["./src", "types"],
+   "include": ["lib", "types"],
    "exclude": ["dist", "./node_modules", "**/*.spec.ts"]
 }

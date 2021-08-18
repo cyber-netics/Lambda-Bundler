@@ -1,0 +1,5 @@
+{
+   "target": "lambdas",
+   "outFile": "lambda.out",
+   "zip": true
+}
