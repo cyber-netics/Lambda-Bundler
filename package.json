@@ -4,16 +4,22 @@
       "bin",
       "dist",
       "package.json"
-    ],
+   ],
    "scripts": {
       "build": "tsc",
-      "start": "node bin/cli"
+      "test": "jest",
+      "start": "node bin/cli",
+      "lint": "eslint ./lib",
+      "lint:fix": "eslint ./lib --fix"
    },
    "dependencies": {
       "commander": "^8.1.0",
       "fs-extra": "^10.0.0"
    },
    "devDependencies": {
+      "jest": "^27.0.6",
+      "@types/jest": "^27.0.1",
+      "ts-jest": "^27.0.5",
       "@types/fs-extra": "^9.0.12",
       "@typescript-eslint/eslint-plugin": "^4.29.0",
       "@typescript-eslint/parser": "^4.29.0",
