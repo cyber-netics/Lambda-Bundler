@@ -1,7 +1,7 @@
 {
    "scripts": {
       "build": "tsc",
-      "start": "ts-node ./lib/lib/index.ts"
+      "start": "ts-node ./lib/bin/index.ts"
    },
    "dependencies": {
       "commander": "^8.1.0",

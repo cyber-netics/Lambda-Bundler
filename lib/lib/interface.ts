@@ -2,6 +2,10 @@ import { Command, Option, OptionValues } from 'commander';
 import { FS } from '../util/fileSystem';
 import * as path from 'path';
 
+/**
+ *
+ * Abstract Config Interface
+ */
 export abstract class InterfaceConfig {
    public active: boolean;
    public configOpts: OptionValues;

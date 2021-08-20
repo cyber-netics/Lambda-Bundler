@@ -1,4 +1,2 @@
-// import { Bundler } from '../lib';
-
-// const data = new Bundler();
-// console.log('---', data.bundle());
+import { Bundler } from '../lib';
+new Bundler();

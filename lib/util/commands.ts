@@ -1,6 +1,6 @@
-import * as fs from 'fs';
-import * as fse from 'fs-extra';
 import * as cp from 'child_process';
+import { FS } from './fileSystem';
+import { Compress } from './compress';
 
 export class Commands {
    public static npmInstall(prefix: string, opts?: any): void {
@@ -12,18 +12,15 @@ export class Commands {
    }
 
    public static zipFile(file: string, opts?: any): void {
-      // Zip specified file
-      const cmd = `zip -r ${file}.zip ${file}`;
-
-      // Cd into directory and run command
-      `cd ${opts.inside} && ${cmd}`;
+      const zip = new Compress(opts);
+      zip.compress(file);
    }
 
    public static removeFiles(destFile: string, fileList: string[]): void {
-      fileList.map((file) => fs.unlinkSync(`${destFile}/${file}`));
+      fileList.map((file) => FS.deleteFile(`${destFile}/${file}`));
    }
 
-   public static copyFile(source: string, destination: string, overwrite = true): void {
-      fse.copySync(source, destination, { overwrite });
+   public static copyFile(source: string, destination: string): void {
+      FS.copyFile(source, destination);
    }
 }
