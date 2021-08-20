@@ -7,7 +7,7 @@
     ],
    "scripts": {
       "build": "tsc",
-      "start": "ts-node ./lib/bin/index.ts"
+      "start": "node bin/cli"
    },
    "dependencies": {
       "commander": "^8.1.0",

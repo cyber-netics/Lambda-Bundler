@@ -1,8 +1,9 @@
 import * as fs from 'fs';
 import * as fse from 'fs-extra';
+import { OptionValues } from '../types';
 
 export class FS {
-   public static readJsonFile(file: string): string[] {
+   public static readJsonFile(file: string): OptionValues {
       const fileContent = fs.readFileSync(file, {
          flag: 'r',
          encoding: 'utf8',

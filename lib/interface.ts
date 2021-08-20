@@ -1,4 +1,5 @@
-import { Command, Option, OptionValues } from 'commander';
+import { Command, Option } from 'commander';
+import { OptionValues } from './types';
 import { FS } from './util/fileSystem';
 import * as path from 'path';
 

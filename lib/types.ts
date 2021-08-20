@@ -1,5 +1,6 @@
 export interface OptionValues {
-   [key: string]: any;
+   target: string;
+   outFile: string;
 }
 
 export interface IArgv {

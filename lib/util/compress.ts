@@ -5,18 +5,58 @@ interface OptionProps {
    inside: string;
 }
 
-export class Compress {
-   protected innerDir: string;
-
-   constructor(opts: OptionProps) {
-      this.innerDir = path.resolve(opts.inside);
+abstract class CompressOS {
+   /**
+    *
+    * @param innerDir
+    */
+   constructor(innerDir: string) {
+      this.innerDirCommand(innerDir);
    }
 
-   private execute(cmd: string): void {
-      cp.execSync(`cd ${this.innerDir} && ${cmd}`);
+   /**
+    *
+    * @param innerDir / Directory where packages
+    */
+   protected abstract innerDirCommand(innerDir: string): void;
+
+   /**
+    *
+    * @param pkg / Package/Directory to compress
+    */
+   protected abstract compressCommand(pkg: string): void;
+
+   /**
+    *
+    * @param pkg / Package Path
+    * @returns {String}
+    */
+   protected abstract createCommand(pkg: string): void;
+}
+
+export class Compress extends CompressOS {
+   private command: string;
+
+   constructor(opts: OptionProps) {
+      super(opts.inside);
+   }
+
+   protected innerDirCommand(innerDir: string): void {
+      if (innerDir && innerDir.length) {
+         this.command = `cd ${path.resolve(innerDir)} && `;
+      }
+   }
+
+   protected compressCommand(pkg: string): void {
+      this.command += `zip -r ${pkg}.zip ${pkg}`;
+   }
+
+   protected createCommand(pkg: string): string {
+      this.compressCommand(pkg);
+      return this.command;
    }
 
    public compress(file: string): void {
-      this.execute(`zip -r ${file}.zip ${file}`);
+      cp.execSync(this.createCommand(file));
    }
 }

@@ -36,11 +36,7 @@ class ConfigOptions {
       this.config = this._createConfig();
    }
 
-   /**
-    *
-    * Interface Modules
-    */
-   protected _createConfig(): OptionValues {
+   private _createConfig(): OptionValues {
       const cli = new Commander();
       if (cli.active) return cli.configOpts;
 
