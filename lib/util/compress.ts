@@ -1,7 +1,7 @@
 import * as cp from 'child_process';
 import * as path from 'path';
 
-interface OptionProps {
+export interface ZipProps {
    inside: string;
 }
 
@@ -37,7 +37,7 @@ abstract class CompressOS {
 export class Compress extends CompressOS {
    private command: string;
 
-   constructor(opts: OptionProps) {
+   constructor(opts: ZipProps) {
       super(opts.inside);
    }
 

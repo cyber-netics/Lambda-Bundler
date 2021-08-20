@@ -1,17 +1,18 @@
-import * as cp from 'child_process';
 import { FS } from './fileSystem';
-import { Compress } from './compress';
+import { Compress, ZipProps } from './compress';
+import { NpmCommand, NpmProps } from './npmCommand';
 
 export class Commands {
-   public static npmInstall(prefix: string, opts?: any): void {
-      cp.execSync(`npm install ${opts.prod ? '--only=prod' : ''} --prefix ${prefix}`);
+   public static npmInstall(prefix: string, opts: NpmProps): void {
+      const npm = new NpmCommand(opts);
+      npm.install(prefix);
    }
 
    public static cdToFile(filePath: string): string {
       return `cd ${filePath}`;
    }
 
-   public static zipFile(file: string, opts?: any): void {
+   public static zipFile(file: string, opts: ZipProps): void {
       const zip = new Compress(opts);
       zip.compress(file);
    }
