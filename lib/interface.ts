@@ -1,5 +1,5 @@
 import { Command, Option, OptionValues } from 'commander';
-import { FS } from '../util/fileSystem';
+import { FS } from './util/fileSystem';
 import * as path from 'path';
 
 /**

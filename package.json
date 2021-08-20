@@ -1,4 +1,10 @@
 {
+   "version": "0.0.1",
+   "files": [
+      "bin",
+      "dist",
+      "package.json"
+    ],
    "scripts": {
       "build": "tsc",
       "start": "ts-node ./lib/bin/index.ts"

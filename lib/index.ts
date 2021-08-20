@@ -1,6 +1,6 @@
 import { FileSystem, Commander } from './interface';
-import { OptionValues } from '../types';
-import { Commands } from '../util/commands';
+import { OptionValues } from './types';
+import { Commands } from './util/commands';
 import * as fs from 'fs';
 import * as path from 'path';
 
